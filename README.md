@@ -43,13 +43,21 @@ export const en = {
 }
 
 // your route
+import { Component } from 'inferno'
+import { withI18n } from 'inferno-i18n-light'
+
+class Home extends Component {
   render () {
     const { t } = this.props
 
     return (
       <>
-        <header>
-          <h1 className='title'>'title'</h1>
-          <span className='subtitle'>{t('home.test')}</span>
-          <p className='content'>{t('home.anotherTest')}</p>
+        <h1 className='title'>DEMO</h1>
+        <span className='subtitle'>{t('home.test')}</span>
+        <p className='content'>{t('home.anotherTest')}</p>
+      </>
+    )
+  }
+}
+export default withI18n(Home)
 ```
