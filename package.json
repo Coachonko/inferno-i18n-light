@@ -1,0 +1,26 @@
+{
+  "name": "inferno-18n-light",
+  "description": "A lightweight i18n framework for inferno",
+  "version": "3.0.1",
+  "keywords": [
+    "i18n",
+    "l10n",
+    "internationalization",
+    "localization",
+    "translation",
+    "inferno"
+  ],
+  "author": "Coachonko",
+  "repository": "https://github.com/Coachonko/inferno-i18n-light",
+  "license": "NCSA",
+  "main": "src/index.js",
+  "dependencies": {
+    "hoist-non-inferno-statics": "^1.1.3"
+  },
+  "devDependencies": {
+    "standard": "^17.1.0"
+  },
+  "peerDependencies": {
+    "inferno": "^8.2.3"
+  }
+}
