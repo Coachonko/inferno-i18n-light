@@ -4,7 +4,7 @@ Lightweight i18n framework for inferno.
 
 Supports several features, take a look at [translate.js](./src/translate.js)
 
-Note: uses infereno JSX, it is not pre-compiled (can change if you open a PR)
+Note: uses inferno JSX, it is not pre-compiled (can change if you open a PR)
 
 Pull requests are welcome, look [here](./CONTRIBUTING.md).
 
