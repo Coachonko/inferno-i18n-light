@@ -10,7 +10,7 @@ Pull requests are welcome, look [here](./CONTRIBUTING.md).
 
 ## Usage
 
-```js
+```JavaScript
 // browser.js
 import { hydrate } from 'inferno-hydrate'
 import { BrowserRouter } from 'inferno-router'
