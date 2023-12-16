@@ -53,8 +53,17 @@ class Home extends Component {
     return (
       <>
         <h1 className='title'>DEMO</h1>
+        
         <span className='subtitle'>{t('home.test')}</span>
         <p className='content'>{t('home.anotherTest')}</p>
+        
+        {/* this.context.setLocale changes locale */}
+        <button 
+          type='button' 
+          onClick={() => { this.context.setLocale('it') }}
+          >
+          it
+        </button>
       </>
     )
   }
