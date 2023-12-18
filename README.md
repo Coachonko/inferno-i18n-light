@@ -14,11 +14,12 @@ Pull requests are welcome, look [here](./CONTRIBUTING.md).
 // browser.js
 import { hydrate } from 'inferno-hydrate'
 import { BrowserRouter } from 'inferno-router'
+import { I18nProvider } from 'inferno-i18n-light' // import inferno-i18n-light
 
-import { I18nProvider } from '../shared/utils/i18n/I18nProvider'
 import { App } from '../shared/components'
 import './styles/index.less'
 
+// import translations
 import { en } from '../shared/languages/en'
 import { it } from '../shared/languages/it'
 import { de } from '../shared/languages/de'
@@ -27,14 +28,18 @@ import { no } from '../shared/languages/no'
 
 hydrate(
   <BrowserRouter>
-    <I18nProvider languages={{ en, it, de, nl, no }} defaultLanguage='en' detectBrowserLanguage>
+    <I18nProvider 
+      languages={{ en, it, de, nl, no }} // give translations to I18nProvider
+      defaultLanguage='en'
+      detectBrowserLanguage
+      >
       <App />
     </I18nProvider>
   </BrowserRouter>
   , document.getElementById('root')
 )
 
-// your '../shared/languages/en'
+// your '../shared/languages/en'. This is a js file, not json.
 export const en = {
   home: {
     test: 'en-test',
@@ -48,7 +53,7 @@ import { withI18n } from 'inferno-i18n-light'
 
 class Home extends Component {
   render () {
-    const { t } = this.props
+    const { t } = this.props // the t function is given by the withI18n HOC
 
     return (
       <>
@@ -60,7 +65,8 @@ class Home extends Component {
         {/* this.context.setLocale changes locale */}
         <button 
           type='button' 
-          onClick={() => { this.context.setLocale('it') }}
+          onClick={() => this.context.setLocale('it')}
+          // changes are seen in this.props.i18nContext given by the withI18n HOC
           >
           it
         </button>
@@ -68,5 +74,6 @@ class Home extends Component {
     )
   }
 }
-export default withI18n(Home)
+// wrap the components that need translations in the withI18n HOC
+export default withI18n(Home) 
 ```
