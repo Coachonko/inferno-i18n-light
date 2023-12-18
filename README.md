@@ -65,8 +65,8 @@ class Home extends Component {
         {/* this.context.setLocale changes locale */}
         <button 
           type='button' 
-          onClick={() => this.context.setLocale('it')}
-          // changes are seen in this.props.i18nContext given by the withI18n HOC
+          onClick={() => this.props.i18nContext.setLocale('it')}
+          {/* changes are seen in this.props.i18nContext given by the withI18n HOC */}
           >
           it
         </button>
