@@ -62,10 +62,10 @@ class Home extends Component {
         <span className='subtitle'>{t('home.test')}</span>
         <p className='content'>{t('home.anotherTest')}</p>
         
-        {/* this.context.setLocale changes locale */}
+        {/* this.context.setLanguage changes language */}
         <button 
           type='button' 
-          onClick={() => this.props.i18nContext.setLocale('it')}
+          onClick={() => this.props.i18nContext.setLanguage('it')}
           {/* changes are seen in this.props.i18nContext given by the withI18n HOC */}
           >
           it

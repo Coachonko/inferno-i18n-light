@@ -1,7 +1,7 @@
 {
   "name": "inferno-i18n-light",
   "description": "A lightweight i18n framework for inferno",
-  "version": "3.0.6",
+  "version": "3.1.0",
   "keywords": [
     "i18n",
     "l10n",

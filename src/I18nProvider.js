@@ -7,7 +7,7 @@ function getBrowserLanguage (defaultLanguage) {
   return defaultLanguage
 }
 
-function initLocale (defaultLanguage, detectBrowserLanguage) {
+function initLanguage (defaultLanguage, detectBrowserLanguage) {
   if (typeof detectBrowserLanguage === 'undefined') {
     detectBrowserLanguage = false
   }
@@ -19,21 +19,21 @@ export class I18nProvider extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      locale: initLocale(props.defaultLanguage, props.detectBrowserLanguage),
-      setLocale: this.setLocale.bind(this),
+      langauge: initLanguage(props.defaultLanguage, props.detectBrowserLanguage),
+      setLanguage: this.setLanguage.bind(this),
       languages: props.languages,
       defaultLanguage: props.defaultLanguage
     }
   }
 
-  setLocale (language) {
-    this.setState({ locale: language })
+  setLanguage (newLanguage) {
+    this.setState({ language: newLanguage })
   }
 
   getChildContext () {
     return {
-      locale: this.state.locale,
-      setLocale: this.setLocale.bind(this),
+      language: this.state.language,
+      setLanguage: this.setLanguage.bind(this),
       languages: this.state.languages,
       defaultLanguage: this.state.defaultLanguage
     }

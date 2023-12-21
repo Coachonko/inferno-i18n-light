@@ -1,6 +1,6 @@
-const getPlural = (count, locale) => {
+const getPlural = (count, language) => {
   if (typeof Intl === 'object' && typeof Intl.PluralRules === 'function') {
-    return new Intl.PluralRules(locale).select(count)
+    return new Intl.PluralRules(language).select(count)
   }
   if (count === 0) {
     return 'zero'
@@ -11,12 +11,12 @@ const getPlural = (count, locale) => {
   }
 }
 
-export function tr ({ locale, languages, defaultLanguage }, key, params) {
-  const currentLocale = !languages[locale] ? defaultLanguage : locale
-  let result = languages[currentLocale]
+export function tr ({ language, languages, defaultLanguage }, key, params) {
+  const currentLanguage = !languages[language] ? defaultLanguage : language
+  let result = languages[currentLanguage]
   let currentKey = key
   if (params && Object.keys(params).includes('count')) {
-    const plural = getPlural(params.count, currentLocale)
+    const plural = getPlural(params.count, currentLanguage)
     if (params.count === 0) {
       currentKey += '.zero'
     } else if (plural === 'other') {
@@ -51,9 +51,9 @@ export function tr ({ locale, languages, defaultLanguage }, key, params) {
 }
 
 export function useT (context) {
-  const { setLocale, ...props } = context
+  const { setLanguage, ...props } = context
 
   const t = (key, params) => tr(props, key, params)
 
-  return { ...props, setLocale, t }
+  return { ...props, setLanguage, t }
 }
