@@ -20,11 +20,11 @@ import { App } from '../shared/components'
 import './styles/index.less'
 
 // import translations
-import { en } from '../shared/languages/en'
-import { it } from '../shared/languages/it'
-import { de } from '../shared/languages/de'
-import { nl } from '../shared/languages/nl'
-import { no } from '../shared/languages/no'
+import en from '../shared/languages/en'
+import it from '../shared/languages/it'
+import de from '../shared/languages/de'
+import nl from '../shared/languages/nl'
+import no from '../shared/languages/no'
 
 hydrate(
   <BrowserRouter>
@@ -39,11 +39,11 @@ hydrate(
   , document.getElementById('root')
 )
 
-// your '../shared/languages/en'. This is a js file, not json.
-export const en = {
-  home: {
-    test: 'en-test',
-    anotherTest: 'en-another-test'
+// your '../shared/languages/en.json'
+{
+  "home": {
+    "test": "en-test",
+    "anotherTest": "en-another-test"
   }
 }
 
