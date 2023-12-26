@@ -5,8 +5,25 @@ import { useT } from './translate'
 export function withI18n (WrappedComponent) {
   return class extends Component {
     render () {
+      const {
+        language,
+        setLanguage,
+        languages,
+        defaultLanguage
+      } = this.context
       const { t } = useT(this.context)
-      return <WrappedComponent {...this.props} i18nContext={this.context} t={t} />
+      return (
+        <WrappedComponent
+          {...this.props}
+          i18nContext={{
+            language,
+            setLanguage,
+            languages,
+            defaultLanguage
+          }}
+          t={t}
+        />
+      )
     }
   }
 }
