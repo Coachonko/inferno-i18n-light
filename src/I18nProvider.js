@@ -19,7 +19,7 @@ export class I18nProvider extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      langauge: initLanguage(props.defaultLanguage, props.detectBrowserLanguage),
+      language: initLanguage(props.defaultLanguage, props.detectBrowserLanguage),
       setLanguage: this.setLanguage.bind(this),
       languages: props.languages,
       defaultLanguage: props.defaultLanguage
